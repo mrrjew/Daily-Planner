@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3001;
 // Environment variables
 const N8N_WEBHOOK_URL =
   process.env.N8N_WEBHOOK_URL ||
-  "https://n8n.gklive.online/webhook-test/daily-planner-post";
+  "https://n8n.gklive.online/webhook/daily-planner-post";
 
 // Middleware
 app.use(
