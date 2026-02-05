@@ -162,7 +162,7 @@
     if (!message) return;
 
     try {
-      const res = await fetch('http://localhost:5678/webhook/daily-planner-post', {
+      const res = await fetch('https://n8n.gklive.online/webhook-test/daily-planner-post', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message })
