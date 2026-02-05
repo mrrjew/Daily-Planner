@@ -162,17 +162,18 @@
     if (!message) return;
 
     try {
-      const res = await fetch('https://n8n.gklive.online/webhook-test/daily-planner-post', {
+      const res = await fetch('http://localhost:3001/api/plan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message })
       });
       const data = await res.json();
+      console.log(data);
       const tasks = data.map(t => ({ ...t, done: false }));
       localStorage.setItem('plannerTasks', JSON.stringify(tasks));
       renderTasks(tasks);
     } catch (err) {
-      alert('Error generating tasks. Make sure your server is running.');
+      // alert('Error generating tasks. Make sure your server is running.');
       console.error(err);
     }
   });
